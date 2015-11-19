@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdio_ext.h>
 
 int main(){
     int cantidad, numeroDado, cociente, numeroAux=0, numeroBase, numeroResultado[100];
@@ -7,8 +8,7 @@ int main(){
     printf("¿A qué base quieres pasar? ");
     scanf("%i", &numeroBase);
     while(!numeroBase || numeroBase==1){    /* Mientras que introduzca un entero o introduce 1 */
-        getchar();
-        fflush(stdout);
+        __fpurge(stdin);
         system("clear");
         printf("¡EL NÚMERO BASE DEBE SER DECIMAL!\n");
         printf("¿A qué base quieres pasar? ");
@@ -18,8 +18,7 @@ int main(){
     printf("¿Qué número quieres pasar? ");
     scanf("%i", &numeroDado);
     while(!numeroDado || numeroDado > 32500){   /* Mientras que introduzca un entero */
-        getchar();
-        fflush(stdout);
+        __fpurge(stdin);
         system("clear");
         printf("¡EL NÚMERO DEBE SER DECIMAL!\n");
         printf("¿Qué número quieres pasar? ");
