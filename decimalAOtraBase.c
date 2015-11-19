@@ -4,18 +4,32 @@
 int main(){
     int i, numeroDado, cociente, numeroAux, numeroBase, numeroResultado[100];
 
-    printf("¿A que base quieres pasar? ");
-    scanf(" %i", &numeroBase);
+    printf("¿A qué base quieres pasar? ");
+    scanf("%i", &numeroBase);
+    while(!numeroBase){
+        getchar();
+        system("clear");
+        printf("¡EL NÚMERO BASE DEBE SER DECIMAL!\n");
+        printf("¿A qué base quieres pasar? ");
+        scanf("%i", &numeroBase);
+    }
 
-    printf("¿Qué numero quieres pasar? ");
-    scanf(" %i", &numeroDado);
+    printf("¿Qué número quieres pasar? ");
+    scanf("%i", &numeroDado);
+    while(!numeroDado || numeroDado > 32500){
+        getchar();
+        system("clear");
+        printf("¡EL NÚMERO DEBE SER DECIMAL!\n");
+        printf("¿Qué número quieres pasar? ");
+        scanf("%i", &numeroDado);
+    }
 
     cociente = numeroDado;
 
     for(i=0 ; cociente >= numeroBase ; i++){
         numeroResultado[i] = cociente%numeroBase;
         numeroAux = cociente;
-        cociente = cociente/numeroBase;
+        cociente /= numeroBase;
     }
 
     numeroResultado[i] = numeroAux/numeroBase;
