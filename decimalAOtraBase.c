@@ -20,13 +20,18 @@ int main(){
 
     numeroResultado[i] = numeroAux/numeroBase;
 
-    printf("\nEl resultado en base %i es: ", numeroBase);
+    printf("\nEl numero %i en base %i es:   ",numeroDado ,numeroBase);
     while(i>=0){
 
-        printf(" %i ", numeroResultado[i]);
+        if(numeroBase == 16)
+            printf("%X", numeroResultado[i]);
+
+        else{
+            printf("%i ", numeroResultado[i]);
 
         if(i)
-            printf("|");
+            printf("| ");
+        }
 
         i--;
     }
