@@ -4,24 +4,15 @@
 #include <math.h>
 
 int main(){
-    int cantidad, numeroDado, cociente, numeroAux=0, numeroBase, numeroAlReves=0, numeroResultado[100];
-
-    printf("¿A qué base quieres pasar? ");
-    scanf("%i", &numeroBase);
-    while(!numeroBase || numeroBase==1){    /* Mientras que introduzca un entero o introduce 1 */
-        __fpurge(stdin);
-        system("clear");
-        printf("¡EL NÚMERO BASE DEBE SER DECIMAL!\n");
-        printf("¿A qué base quieres pasar? ");
-        scanf("%i", &numeroBase);
-    }
+    int cantidad, numeroDado, cociente, numeroAux=0, numeroAlReves=0, numeroResultado[100];
+    const int numeroBase = 10;
 
     printf("¿Qué número quieres pasar? ");
     scanf("%i", &numeroDado);
     while(!numeroDado || numeroDado > 32500){   /* Mientras que introduzca un entero */
         __fpurge(stdin);
         system("clear");
-        printf("¡EL NÚMERO DEBE SER DECIMAL!\n");
+        printf("¡EL NÚMERO DEBE SER DECIMAL O MÁS PEQUEÑO!\n");
         printf("¿Qué número quieres pasar? ");
         scanf("%i", &numeroDado);
     }
