@@ -31,7 +31,9 @@ int main(){
     /* Pasos:
      * 1- Dividir hasta que el cociente sea menor que la base e ir guardando los restos.
      * 2- Guardar el ultimo cociente.
-     * 3- Imprimir el resultado de final a principio.
+     * 3- Coger cada numero separado, multiplicarlo por 10 elevado a su respectivo exponente y sumarlos entre ellos.
+     * 4- Guardarlo en una sola variable.
+     * 5- Imprimir variable
      */
 
     for(cantidad=0 ; cociente >= numeroBase ; cantidad++){    /* Paso 1 */
@@ -42,12 +44,10 @@ int main(){
 
     numeroResultado[cantidad] = numeroAux/numeroBase;         /* Paso 2 */
 
-    for(int j=cantidad, i=0 ; j>=0 ; j--){
-        numeroAlReves += numeroResultado[i]*pow(10,j);
-        i++;
-    }
+    for(int j=cantidad, i=0 ; j>=0 ; j--, i++)
+        numeroAlReves += numeroResultado[i]*pow(10,j);          /* Paso 3 y 4 */
 
-    printf("\nEl numero %i al revés es %i\n\n", numeroDado, numeroAlReves);
+    printf("\nEl numero %i al revés es %i\n\n", numeroDado, numeroAlReves); /* Paso 5 */
 
     return EXIT_SUCCESS;
 }
