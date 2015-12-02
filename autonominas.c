@@ -156,8 +156,8 @@ float calcularSueldoBruto (float salarioBase, float plusGeneral, float plusNoSal
         return salarioBase + plusGeneral + plusNoSalarial + plusPerceptible + horasExtra + prorrateo;
 
     else if(prorrateoAUX != 1 && pagaExtraEsteMes != 0)
-        return salarioBase + plusGeneral + plusPerceptible + horasExtra + pagaExtraEsteMes;
+        return salarioBase + plusGeneral + plusNoSalarial + plusPerceptible + horasExtra + pagaExtraEsteMes;
 
     else
-        return salarioBase + plusGeneral + plusPerceptible + horasExtra;
+        return salarioBase + plusGeneral + plusNoSalarial + plusPerceptible + horasExtra;
 }
